@@ -21,9 +21,6 @@
 	href="https://bootstrapious.com/tutorial/sidebar/style4.css">
 </head>
 <body>
-
-
-
 	<div class="wrapper">
 		<!-- Sidebar Holder -->
 		<nav id="sidebar">
@@ -36,15 +33,15 @@
 				<li class="active"><a href="#"> <i
 						class="glyphicon glyphicon-home"></i> Home
 				</a></li>
-				<li><a href="<c:url value="/attendance" />"> <i
+				<li><a href="<c:url value="/listAttendance" />"> <i
 						class="glyphicon glyphicon-briefcase"></i> Attendance
-				</a> <a href="<c:url value="/salary" />"> <i
+				</a> <a href="<c:url value="/listSalary" />"> <i
 						class="glyphicon glyphicon-briefcase"></i> Salary
-				</a> <a href="<c:url value="/advancePayment" />"> <i
+				</a> <a href="<c:url value="/listAdvancePayment" />"> <i
 						class="glyphicon glyphicon-briefcase"></i> Advance Payment
-				</a> <a href="<c:url value="/employees" />"> <i
+				</a> <a href="<c:url value="/listEmployees" />"> <i
 						class="glyphicon glyphicon-briefcase"></i> Employees
-				</a> <a href="<c:url value="/fullAndFinal" />"> <i
+				</a> <a href="<c:url value="/listFullAndFinal" />"> <i
 						class="glyphicon glyphicon-briefcase"></i> Full and Final
 				</a> <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">
 						<i class="glyphicon glyphicon-duplicate"></i> Reports

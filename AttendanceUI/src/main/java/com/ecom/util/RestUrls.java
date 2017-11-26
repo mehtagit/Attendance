@@ -1,7 +1,8 @@
 package com.ecom.util;
 
 public class RestUrls {
-	public static String ip = "103.206.248.235:9991";
+	//public static String ip = "103.206.248.235:9991";
+	public static String ip = "127.0.0.1:9991";
 
 	public static String urlPrefix = "http://" + ip;
 

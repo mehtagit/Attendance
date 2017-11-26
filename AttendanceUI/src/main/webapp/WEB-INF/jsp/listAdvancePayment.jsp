@@ -28,7 +28,7 @@
 						<td><c:out value="INR 300" /></td>
 						<td><c:out value="25-NOV-2017" /></td>
 						<td><c:out value="Loan" /></td>
-						<td><a href="#">Take More</a></td>
+						<td><a href="<c:url value="/formPayAdvance/${labour.labour_id}/${labour.firstname}" />">Take More</a></td>
 
 					</tr>
 				</c:forEach>

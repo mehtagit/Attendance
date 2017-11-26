@@ -1,0 +1,52 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/mvc 
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:component-scan base-package="com.ecom" />
+
+	<mvc:annotation-driven />
+
+	<bean id="gson" class="com.google.gson.Gson" />
+	<context:annotation-config /><!-- 
+	<context:property-placeholder location="classpath:Config.properties" /> -->
+	<bean id="ErrorMap" class="java.util.HashMap">
+		<constructor-arg>
+			<map key-type="java.lang.String" value-type="java.lang.String">
+				<entry key="0" value="SUCCESS" />
+				<entry key="200" value="SUCCESS" />
+				<entry key="201" value="Value Missing in Json" />
+				<entry key="202" value="Wrong Request Type Recieved" />
+			</map>
+		</constructor-arg>
+	</bean>
+	<bean id="jdbcService" class="com.ecom.services.JDBCTemplateService">
+		<constructor-arg ref="springDataSource" index="0" />
+		<constructor-arg ref="transactionManager" index="1" />
+	</bean>
+
+	<!-- Initialization for TransactionManager -->
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="springDataSource" />
+	</bean>
+
+	<bean id="springDataSource" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="url"
+			value="jdbc:mysql://127.0.0.1:3306/testDB" />
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="username" value="mysqluser" />
+		<property name="password" value="mysqlpassword" />
+		<property name="removeAbandoned" value="true" />
+		<property name="initialSize" value="20" />
+		<property name="maxActive" value="30" />
+	</bean>
+	<bean id="clientSocket" class="java.net.DatagramSocket" />
+</beans>

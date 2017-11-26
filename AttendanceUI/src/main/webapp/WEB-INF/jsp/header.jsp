@@ -36,14 +36,16 @@
 				<li class="active"><a href="#"> <i
 						class="glyphicon glyphicon-home"></i> Home
 				</a></li>
-				<li><a href="#"> <i class="glyphicon glyphicon-briefcase"></i>
-						Salary
-				</a> <a href="#"> <i class="glyphicon glyphicon-briefcase"></i>
-						Advance Payment
-				</a> <a href="<c:url value="/employees" />"> <i class="glyphicon glyphicon-briefcase"></i>
-						Employees
-				</a> <a href="#"> <i class="glyphicon glyphicon-briefcase"></i> Full
-						and Final
+				<li><a href="<c:url value="/attendance" />"> <i
+						class="glyphicon glyphicon-briefcase"></i> Attendance
+				</a> <a href="<c:url value="/salary" />"> <i
+						class="glyphicon glyphicon-briefcase"></i> Salary
+				</a> <a href="<c:url value="/advancePayment" />"> <i
+						class="glyphicon glyphicon-briefcase"></i> Advance Payment
+				</a> <a href="<c:url value="/employees" />"> <i
+						class="glyphicon glyphicon-briefcase"></i> Employees
+				</a> <a href="<c:url value="/fullAndFinal" />"> <i
+						class="glyphicon glyphicon-briefcase"></i> Full and Final
 				</a> <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">
 						<i class="glyphicon glyphicon-duplicate"></i> Reports
 				</a>
@@ -59,7 +61,7 @@
 						FAQ
 				</a></li>
 				<li><a href="#"> <i class="glyphicon glyphicon-send"></i>
-						Contact
+						Logout
 				</a></li>
 			</ul>
 

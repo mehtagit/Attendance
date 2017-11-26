@@ -14,6 +14,7 @@
 					<th>Last Name</th>
 					<th>Contact No</th>
 					<th>Joining Date</th>
+					<th>#</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -24,7 +25,7 @@
 						<td><c:out value="${labour.lastname}" /></td>
 						<td><c:out value="${labour.mobile_no}" /></td>
 						<td><c:out value="${labour.createdOn}" /></td>
-
+						<td><a href="#">Take More</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>

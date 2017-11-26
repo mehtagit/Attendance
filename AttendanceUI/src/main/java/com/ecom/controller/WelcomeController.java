@@ -38,24 +38,7 @@ public class WelcomeController {
 		}
 		return "login";
 	}
-
-	@RequestMapping("/employees")
-	public String employees(@ModelAttribute("industry") Industry industry, Model model) {
-
-		String labourListResponseInJson = utility.callGet(RestUrls.getLabourListURL + industry.getIndustry_id());
 	
-		if (labourListResponseInJson == null || "null".equals(labourListResponseInJson)) {
-			System.out.println(" Server is not responding..");
-			model.addAttribute("message", "Server is not responding..");
-			return "errorLogin";
-		} else {
-			List<Labour> labourList = utility.gson.fromJson(labourListResponseInJson, new TypeToken<List<Labour>>() {
-			}.getType());
-			model.addAttribute("labourList", labourList);
-		}
-		return "employees";
-	}
-
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String login(@ModelAttribute("industryForm") Industry industry, BindingResult result, Model model,
 			final RedirectAttributes redirectAttributes) {
@@ -82,5 +65,90 @@ public class WelcomeController {
 				return "errorLogin";
 			}
 		}
+	}
+
+	@RequestMapping("/employees")
+	public String employees(@ModelAttribute("industry") Industry industry, Model model) {
+
+		String labourListResponseInJson = utility.callGet(RestUrls.getLabourListURL + industry.getIndustry_id());
+	
+		if (labourListResponseInJson == null || "null".equals(labourListResponseInJson)) {
+			System.out.println(" Server is not responding..");
+			model.addAttribute("message", "Server is not responding..");
+			return "errorLogin";
+		} else {
+			List<Labour> labourList = utility.gson.fromJson(labourListResponseInJson, new TypeToken<List<Labour>>() {
+			}.getType());
+			model.addAttribute("labourList", labourList);
+		}
+		return "employees";
+	}
+	
+	@RequestMapping("/attendance")
+	public String attendance(@ModelAttribute("industry") Industry industry, Model model) {
+
+		String labourListResponseInJson = utility.callGet(RestUrls.getLabourListURL + industry.getIndustry_id());
+	
+		if (labourListResponseInJson == null || "null".equals(labourListResponseInJson)) {
+			System.out.println(" Server is not responding..");
+			model.addAttribute("message", "Server is not responding..");
+			return "errorLogin";
+		} else {
+			List<Labour> labourList = utility.gson.fromJson(labourListResponseInJson, new TypeToken<List<Labour>>() {
+			}.getType());
+			model.addAttribute("labourList", labourList);
+		}
+		return "attendance";
+	}
+	
+	@RequestMapping("/salary")
+	public String salary(@ModelAttribute("industry") Industry industry, Model model) {
+
+		String labourListResponseInJson = utility.callGet(RestUrls.getLabourListURL + industry.getIndustry_id());
+	
+		if (labourListResponseInJson == null || "null".equals(labourListResponseInJson)) {
+			System.out.println(" Server is not responding..");
+			model.addAttribute("message", "Server is not responding..");
+			return "errorLogin";
+		} else {
+			List<Labour> labourList = utility.gson.fromJson(labourListResponseInJson, new TypeToken<List<Labour>>() {
+			}.getType());
+			model.addAttribute("labourList", labourList);
+		}
+		return "salary";
+	}
+	
+	@RequestMapping("/advancePayment")
+	public String advancePayment(@ModelAttribute("industry") Industry industry, Model model) {
+
+		String labourListResponseInJson = utility.callGet(RestUrls.getLabourListURL + industry.getIndustry_id());
+	
+		if (labourListResponseInJson == null || "null".equals(labourListResponseInJson)) {
+			System.out.println(" Server is not responding..");
+			model.addAttribute("message", "Server is not responding..");
+			return "errorLogin";
+		} else {
+			List<Labour> labourList = utility.gson.fromJson(labourListResponseInJson, new TypeToken<List<Labour>>() {
+			}.getType());
+			model.addAttribute("labourList", labourList);
+		}
+		return "advancePayment";
+	}
+	
+	@RequestMapping("/fullAndFinal")
+	public String fullAndFinal(@ModelAttribute("industry") Industry industry, Model model) {
+
+		String labourListResponseInJson = utility.callGet(RestUrls.getLabourListURL + industry.getIndustry_id());
+	
+		if (labourListResponseInJson == null || "null".equals(labourListResponseInJson)) {
+			System.out.println(" Server is not responding..");
+			model.addAttribute("message", "Server is not responding..");
+			return "errorLogin";
+		} else {
+			List<Labour> labourList = utility.gson.fromJson(labourListResponseInJson, new TypeToken<List<Labour>>() {
+			}.getType());
+			model.addAttribute("labourList", labourList);
+		}
+		return "fullAndFinal";
 	}
 }

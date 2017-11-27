@@ -22,7 +22,7 @@
 				<c:forEach items="${labourList}" var="labour">
 					<tr>
 						<th scope="row">${labour.labour_id}</th>
-						<td><c:out value="${labour.firstname} ${labour.lastname}" /></td>
+						<td><a href="<c:url value="/attendanceSummary/${labour.labour_id}" />"> <c:out value="${labour.firstname} ${labour.lastname}" /></a></td>
 						<td><c:out value="Oct 2017" /></td>
 						<td><c:out value="21" /></td>
 						<td><c:out value="3" /></td>

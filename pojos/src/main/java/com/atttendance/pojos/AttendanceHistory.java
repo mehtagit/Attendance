@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public class AttendanceHistory {
+	
 	private int noOfMonths=3;
 	private List<Attendance> attendanceList;
 	private HashMap<Integer, List<AttendanceSummary>> attendanceSummaryMap;

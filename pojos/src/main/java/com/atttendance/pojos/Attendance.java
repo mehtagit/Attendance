@@ -1,6 +1,7 @@
 package com.atttendance.pojos;
 
 public class Attendance {
+	
 	private String id;
 	private String labour_id;
 	private String in_time;
